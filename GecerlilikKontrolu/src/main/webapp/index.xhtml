@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+    <title>Geçerleme Örnekleri</title>
+    </h:head>
+    <h:body>
+
+    <h:form>
+    <h:panelGrid columns="3">
+
+    <h:outputLabel value="Karakter girişi (2-5) arası : "/>
+    <h:inputText id="aralik">
+    <f:validateLength minimum="2" maximum="5"/>
+    </h:inputText> 
+    <h:message for="aralik"/>
+
+    <h:outputLabel value="E-posta giriniz : "/>
+    <h:inputText id="eposta">
+    <f:validator validatorId="epostaGecerleyici"/>
+    </h:inputText>
+    <h:message for="eposta"/>  
+
+    <h:outputLabel value="Mutlaka girilmeli : "/>
+    <h:inputText id="mutlaka" required="true" requiredMessage="Mesaj girilmeli!"/>
+    <h:message for="mutlaka"/>                      
+
+    <h:outputLabel value="Yalnızca harf giriniz : " />
+    <h:inputText id="harf" validatorMessage="Lütfen yalnızca harf girişi yapınız">
+        <f:validateRegex pattern="^[A-Za-z]+$" /> 
+    </h:inputText>
+    <h:message for="harf"/>
+
+    <h:commandButton value="Onayla"/>   
+
+    </h:panelGrid>
+    </h:form>
+    </h:body>
+    </html>

@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Kodcu.com RESTful WebServices</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid columns="2">              
+                <h:outputLabel value="Yazar : "/>
+                <h:inputText value="#{yaziController.yazi.yazar}" />
+                <h:outputLabel value="Tarih : "/>
+                <h:inputText value="#{yaziController.yazi.tarih}" />
+                <h:outputLabel value="Yazi : "/>
+                <h:inputTextarea value="#{yaziController.yazi.yazi}" />
+                
+            </h:panelGrid> 
+            
+            <h:commandButton value="Yazı Ekle" action="#{yaziController.yaziEkle}" />
+        </h:form>
+        <br></br>
+        <br>Yazı Listesi</br>
+        <br></br>
+        
+        <h:dataTable value="#{yaziController.yaziListesi}" var="liste"
+                     border="1" >
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Yazı No" />
+                </f:facet>
+                <h:outputText value="#{liste.yaziNo}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Yazar" />
+                </f:facet>
+                <h:outputText value="#{liste.yazar}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Tarih" />
+                </f:facet>
+                <h:outputText value="#{liste.tarih}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Yazı içeriği" />
+                </f:facet>
+                <h:outputText value="#{liste.yazi}" />
+            </h:column>            
+        </h:dataTable>
+        
+    </h:body>
+</html>
+

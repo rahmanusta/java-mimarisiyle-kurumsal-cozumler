@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="KodcuComRESTful:war exploded">
+    <output-path>$PROJECT_DIR$/target/RESTful-1.0</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="KodcuComRESTful/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="KodcuComRESTful" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.9" />
+          <element id="library" level="project" name="Maven: javax:javaee-web-api:6.0" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

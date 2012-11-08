@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Selam</title>
+    </h:head>
+    <h:body style="padding: 10px">
+        
+        <h:form>
+            <h:outputLabel value="Kitap Adı    : "/>
+            <h:inputText   value="#{bean.kitap.kitapAdi}" /><br/>
+            <h:outputLabel value="Fiyatı       : "/>
+            <h:inputText  value="#{bean.kitap.fiyat}" /><br/>
+            <h:outputLabel value="Açıklama     : "/>
+            <h:inputText value="#{bean.kitap.aciklama}" /><br/>
+            <h:outputLabel value="Satfa sayısı : "/>
+            <h:inputText value="#{bean.kitap.sayfaSayisi}" /><br/>
+            <h:commandButton value="Stateless Test" action="#{bean.kaydet}"></h:commandButton>
+        
+            
+             <h:dataTable var="veri" value="#{bean.kitaplar}" border="1" cellspacing="2" cellpadding="2">
+            <h:column>
+                <h:outputText value="#{veri.id}"/>
+            </h:column>
+            <h:column>
+                <h:outputText value="#{veri.kitapAdi}"/>              
+            </h:column>
+            <h:column>
+                <h:outputText value="#{veri.aciklama}" />
+            </h:column>
+            <h:column>
+                <h:outputText value="#{veri.sayfaSayisi}"/>
+            </h:column>
+            <h:column>
+                <h:outputText value="#{veri.fiyat}"/>
+            </h:column>
+        </h:dataTable>
+        </h:form>
+   
+    </h:body>
+</html>

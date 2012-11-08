@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Yeni Kitap Oluştur</title>
+    </h:head>
+    <h:body>
+        <h1>Yeni bir kitap oluşturunuz..</h1>
+        <hr/>
+        <h:message for="fiyat"/>
+        <h:form>
+            <h:panelGrid columns="2">
+                
+                <h:outputLabel value="ISBN : "/>
+                <h:inputText value="#{bean.kitap.isbn}"/>
+                
+                <h:outputText value="Adı : "/>
+                <h:inputText value="#{bean.kitap.adi}"/>
+                
+                <h:outputText value="Açıklama : "/>
+                <h:inputTextarea value="#{bean.kitap.aciklama}"/>
+                
+                <h:outputLabel id="fiyat" value="Fiyatı : "/>
+                <h:inputText value="#{bean.kitap.fiyat}"/>
+                
+                <h:outputLabel value="Sayfa Sayısı : "/>
+                <h:inputText value="#{bean.kitap.sayfaSayisi}"/>
+                
+                <h:outputLabel value="Yazar : "/>
+                <h:inputText value="#{bean.kitap.yazar}"/>
+                 
+            </h:panelGrid>
+            
+            <h:commandButton value="Yeni bir kitap oluştur" action="#{bean.kitapOlustur}"/>
+        </h:form>
+
+    </h:body>
+</html>

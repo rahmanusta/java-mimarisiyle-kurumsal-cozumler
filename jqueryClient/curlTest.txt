@@ -1,0 +1,12 @@
+//Kayıt okuma (JSON biçiminde)
+curl -X GET -H "Accept: application/json" http://localhost:8080/KodcuComRESTful/kodcuRS/yazilar/Rah
+
+//Kayıt okuma (XML biçiminde)
+curl -X GET -H "Accept: application/xml" http://localhost:8080/KodcuComRESTful/kodcuRS/yazilar/R
+
+// Kayıt ekleme (JSON biçimi ile)
+curl -X POST --data-binary "{\"tarih\":\"29.01.2012\",\"yazar\":\"Rahman Usta\",\"yazi\":\"RESTFUL web servisleri\"}" -H "Content-Type: application/json" -H "Accept: application/json" http://localhost:43842/KodcuComRESTful/kodcuRS/yazilar
+
+//Kayıt silme  (Yazı No ile)
+curl -X DELETE http://localhost:8080/KodcuComRESTful/kodcuRS/yazilar/sil/xxx
+

@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+    <title>Spring ve Hibernate ve JSF</title>
+    <style type="text/css" >
+        body{
+            font-family: Arial, Verdana, sans-serif;
+            font-weight: bold;
+        }
+        table {
+            /* width: 100%;  */
+            border-collapse: collapse;
+            border-bottom: 1px solid #000;
+        }
+
+        table th,
+        table td {
+            padding: 5px;
+            text-align: left;
+            font-family: Arial, Verdana, sans-serif;
+            border: 1px solid #000;
+            border-bottom:0;
+        }
+
+
+        table th {
+            background-color: #ddd;
+            color: #BB0000;
+            border-bottom: 2px solid #000;
+        }
+
+        table tr.odd {
+            background-color: #DDFFFF;
+        }
+
+        table tr.odd td {
+            border-top: 1px solid #ccc;
+        }
+
+        table tr.even {
+            background-color: #FBFBFB;
+        }
+
+        table tr.even td {
+            border-top: 1px solid #BBEEEE;
+        }
+
+        br {
+
+        }
+    </style>
+</h:head>
+<h:body>
+    <h:form>
+        <h:panelGrid columns="2">
+            <h:outputLabel value="Yazar : "/>
+            <h:inputText value="#{yazikontrolor.yazi.yazar}"/>
+            <h:outputLabel value="Tarih : "/>
+            <h:inputText value="#{yazikontrolor.yazi.tarih}"/>
+            <h:outputLabel value="Yazi : "/>
+            <h:inputTextarea value="#{yazikontrolor.yazi.yazi}"/>
+
+        </h:panelGrid>
+        <br></br>
+        <h:commandButton value="Yazi Ekle" action="#{yazikontrolor.yaziEkle}"/>
+
+    <br></br>
+    <br>Yazı Listesi</br>
+    <br></br>
+
+    <h:dataTable id="tablom" value="#{yazikontrolor.yaziListesi}" var="liste"
+                 border="1">
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="YazÄ± No"/>
+            </f:facet>
+            <h:outputText value="#{liste.yaziNo}"/>
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Yazar"/>
+            </f:facet>
+            <h:outputText value="#{liste.yazar}"/>
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Tarih"/>
+            </f:facet>
+            <h:outputText value="#{liste.tarih}"/>
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Yazı İçeriği"/>
+            </f:facet>
+            <h:outputText value="#{liste.yazi}"/>
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Yazı Sil"/>
+            </f:facet>
+            <h:commandButton action="#{yazikontrolor.yaziSil(liste.yaziNo)}"   value="Sil">
+
+            </h:commandButton>
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Güncelle"/>
+            </f:facet>
+            <h:commandButton action="#{yazikontrolor.yaziGuncelle(yazikontrolor.yazi,liste)}"   value="Güncelle">
+
+            </h:commandButton>
+
+        </h:column>
+
+    </h:dataTable>
+    </h:form>
+</h:body>
+</html>
+

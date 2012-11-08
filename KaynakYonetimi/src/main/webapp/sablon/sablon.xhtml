@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <h:outputStylesheet library="tema" name="css/style.css"/>
+    </h:head>
+    <h:body>
+        
+  <div class="sayfa">
+  <div class="ust">
+      <ui:insert name="ust">
+          <ui:include src="/sablon/ust.xhtml"/>
+      </ui:insert>   
+  </div>
+  <div class="icerik">
+       <ui:insert name="icerik">
+          <ui:include src="/sablon/icerik.xhtml"/>
+      </ui:insert> 
+  </div>
+  <div class="alt">
+      <ui:insert name="alt">
+          <ui:include src="/sablon/alt.xhtml"/>
+      </ui:insert> 
+  </div>
+  </div>
+        
+    </h:body>
+</html>
+

@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>      
+    </h:head>
+    
+    <h:body>
+        <ui:decorate template="/sablon/sablon.xhtml">
+            <ui:define name="ust">
+                <h1 align="center">Yeni Üst Kısım</h1>
+                <h2 align="center">Yeni Üst Kısım</h2>
+                <h3 align="center">Yeni Üst Kısım</h3>
+            </ui:define>
+            
+            <h1>Burası görülebiliyor mu?</h1>
+            <ui:define name="icerik">
+                <div align="center">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dapibus vehicula metus sit amet porttitor. Aenean ut turpis eu orci venenatis malesuada. Maecenas sit amet ultrices ante. Aliquam ultricies pharetra tristique. Cras felis arcu, ultricies ac volutpat eget, porta vel libero. Suspendisse potenti. In ut felis elit, eget blandit felis. Donec ut ullamcorper velit. 
+                    <br/>
+                    <h:graphicImage class="img" library="tema" name="images/Kodcu-Logo.png"/>
+                    <br/>
+                    Nam quam metus, aliquet id fermentum a, pellentesque vitae metus. Mauris vitae eros tincidunt sapien ullamcorper faucibus. Nam luctus varius viverra. Ut non nisi dui, eget tempor leo. Phasellus tincidunt sem dapibus eros commodo et porta arcu condimentum. In vel nulla ac justo ultricies viverra. Nam porta dictum vulputate. 
+                    <h:commandButton value="Onayla" onclick="alert('Hoşgeldiniz..')"/>
+                </div>
+            </ui:define>
+        </ui:decorate>
+       
+    </h:body>
+</html>
