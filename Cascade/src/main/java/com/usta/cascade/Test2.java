@@ -37,20 +37,18 @@ public class Test2 {
         torba.add(urun);
         torba.add(urun2);
         saglayici.setUrunler(torba);
-        
-        
-      
-            trx.begin();
-            em.persist(saglayici); // Kaydetmeden önce
-            
-            // Yönetimli nesneler üzerindeki değişiklikler,
-            // transaction commit sonrası veritabanına güncellenir
-            
-            trx.commit(); // Kaydettikten sonra
-            saglayici.setSirketAdi("Ege Bilişim"); 
-            
-          // trx.begin();
-          // trx.commit();
-        
+       
+       trx.begin();
+        em.persist(saglayici); // Kaydetmeden önce
+
+        // Yönetimli nesneler üzerindeki değişiklikler,
+        // transaction commit sonrası veritabanına güncellenir
+
+        trx.commit(); // Kaydettikten sonra
+        saglayici.setSirketAdi("Ege Bilişim"); 
+
+      // trx.begin();
+      // trx.commit();
+
     }
 }

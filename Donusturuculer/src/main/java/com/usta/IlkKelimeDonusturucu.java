@@ -18,7 +18,8 @@
     @FacesConverter("ilkKelimeDonusturucusu")
     public class IlkKelimeDonusturucu  implements Converter{
 
-    @Override
+    // Dönen değer yönetimli nesneye    
+    @Override 
     public Object getAsObject(FacesContext context, UIComponent component, String value) {
 
     if(value==null || value.equals("")) {
@@ -30,6 +31,7 @@
     return value.split(" ")[0]; 
     }
 
+    // Dönen değer önyüze
     @Override
     public String getAsString(FacesContext context, UIComponent component, Object value) {
 

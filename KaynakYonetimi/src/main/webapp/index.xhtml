@@ -24,10 +24,16 @@
                     <h:graphicImage class="img" library="tema" name="images/Kodcu-Logo.png"/>
                     <br/>
                     Nam quam metus, aliquet id fermentum a, pellentesque vitae metus. Mauris vitae eros tincidunt sapien ullamcorper faucibus. Nam luctus varius viverra. Ut non nisi dui, eget tempor leo. Phasellus tincidunt sem dapibus eros commodo et porta arcu condimentum. In vel nulla ac justo ultricies viverra. Nam porta dictum vulputate. 
-                    <h:commandButton value="Onayla" onclick="alert('Hoşgeldiniz..')"/>
+                    <h:commandButton value="Onayla" onclick="jsFunction('Hoşgeldiniz..')"/>
                 </div>
             </ui:define>
         </ui:decorate>
-       
+        <script type="text/javascript">
+            
+            var jsFunction= function(mesaj){
+                alert(mesaj);
+                
+            }
+        </script>
     </h:body>
 </html>

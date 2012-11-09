@@ -1,0 +1,88 @@
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background-color: #FFCC33;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+/* ~~ Öğe/etiket seçiciler~~ */
+ul, ol, dl { /* Tarayıcıların arasındaki çeşitlemelerden dolayı, listelerde dolgu ve kenar boşluğunu sıfırlamakta fayda vardır. Tutarlılık sağlamak için, istediğiniz miktarları burada veya içerdikleri liste öğelerinde (LI, DT, DD) belirtebilirsiniz. Burada yaptığınızın siz daha belirli bir seçici yazmadığınız sürece .nav listesine basamaklanacağını unutmayın. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* üst kenar boşluğunu kaldırmak kenar boşluklarının onları içeren div’den kaçabilecekleri bir duruma sebep olur. Kalan alt kenar boşluğu onu takip eden herhangi bir öğeden uzak tutar. */
+	padding-right: 15px;
+	padding-left: 15px; /* div’lerin kendisinin yerine onların içindeki öğelerin kenarlarına dolgu eklemek, herhangi bir kutu modeli matematiğinin olmamasını sağlar. Ayrıca kenar dolgulu bir yuvalanmış div de alternatif bir yöntem olarak kullanılabilir. */
+}
+a img { /* bu seçici, bazı tarayıcılarda görüntü bir bağla çevrelendiğinde görüntünün etrafında görüntülenen varsayılan mavi kenarlığı kaldırır. */
+	border: none;
+}
+
+/* ~~ Sitenizin bağlarının stili, hover efektini oluşturan seçiciler grubu da dahil olmak üzere, şu sırada kalmalıdır. ~~ */
+a:link {
+	color:#414958;
+	text-decoration: underline; /* bağlarınıza aşırı derecede benzersiz görüneceği şekilde stil vermediğiniz sürece, hızlı görsel tanımlama olabilmesi için yapılabilecek en iyi şey alt çizgi sağlamaktır.  */
+}
+a:visited {
+	color: #4E5869;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* bu seçiciler grubu, bir klavye gezginine fare kullanan bir kişiyle aynı hover (üzerine gelme) deneyimini sağlayacaktır. */
+	text-decoration: none;
+}
+
+/* ~~ bu kap, onlara yüzde tabanlı genişliğini veren diğer tüm div’leri çevreler ~~ */
+.sayfa {
+	width: 70%;
+	max-width: 1260px;/* bu mizanpajın büyük bir ekranda fazla geniş olmasını önlemek için bir maksimum genişlik istenebilir. Bu, satır uzunluğunu daha okunabilir hale getirir. IE6 bu bildirimi kabul etmez.  */
+	min-width: 780px;/* bu mizanpajın fazla dar olmasını önlemek için bir minimum genişlik istenebilir. Bu, yan sütunlarda satır uzunluğunu daha okunabilir hale getirir. IE6 bu bildirimi kabul etmez.  */
+	background-color: #FFF;
+	margin: 0 auto; /* kenarlardaki otomatik değer, genişlikle eşleştirildiğinde, mizanpajı ortalar. .container öğesinin genişliğini %100 olacak şekilde ayarlarsanız bu gerekmez. */
+}
+
+/* ~~üstbilgi belirli bir genişlik değildir. Mizanpajınızın tüm genişliğini uzatır. Sizin kendi bağlı logonuzla değiştirilmesi gereken bir görüntü yer tutucusu içerir~~ */
+.ust {
+	background-color: #6F7D94;
+}
+
+/* ~~ Bu mizanpaj bilgisidir. ~~ 
+
+1) Dolgu yalnızca div’in üst ve/veya alt kısmına yerleştirilir. Bu dolgunun içindeki öğelerin kenarlarında dolgu vardır. Bu sizi herhangi bir "kutu modeli matematiğinden" kurtarır. Div’in kendisine herhangi bir kenar dolgusu veya kenarlık eklerseniz, bu *toplam* genişliği oluşturmak için tanımladığınız genişliğe eklenir. Ayrıca, div’deki öğenin dolgusunu kaldırıp içine genişliği olmayan yeni bir div ve tasarımınız için gerekli olan dolguyu yerleştirmeyi de seçebilirsiniz.
+
+*/
+.icerik {
+	padding: 10px 0;
+}
+
+/* ~~ Bu gruplanan seçici .content alanındaki listeleri verir ~~ */
+.icerik ul, .icerik ol { 
+	padding: 0 15px 15px 40px; /* bu dolgu yukarıda üstbilgilerdeki ve paragraf kuralındaki sağ dolguyu yansıtır. Dolgu, listelerdeki diğer öğeler arasındaki alan için alta ve satırbaşını oluşturmak için sola yerleştirilir. Bunlar istediğiniz gibi ayarlanabilir. */
+}
+
+/* ~~ Altbilgi ~~ */
+.alt {
+	padding: 10px 0;
+	background-color: #6F7D94;
+}
+
+/* ~~ çeşitli float/clear sınıfları ~~ */
+.fltrt {  /* bu sınıf bir öğeyi sayfanızın sağında yüzdürmek için kullanılabilir. Yüzen öğe sayfada olması gereken bir sonraki öğeden önce gelmelidir. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* bu sınıf bir öğeyi sayfanızın solunda yüzdürmek için kullanılabilir. Yüzen öğe sayfada olması gereken bir sonraki öğeden önce gelmelidir. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* bu sınıf, #footer kaldırılırsa veya #container öğesinden çıkarılırsa, son yüzdürülen div’i (#container öğesi içinde) takiben bir <br /> veya boş bir div’e yerleştirilebilir */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+.img{
+    
+    margin-left: auto;margin-right: auto;display: block
+}
